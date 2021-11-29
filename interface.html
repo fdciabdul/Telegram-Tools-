@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tele Tools</title>
+    <link rel="stylesheet" href="interface.css">
+    <script src="interface.js"></script>
+  </head>
+
+  <body>
+  <div class="modal-wormhole visible send-invite ember-view" id="ember">
+    <div aria-labelledby="ember-modal-label" class="modal-wormhole-content" role="dialog" tabindex="-1" style="min-width: 500px;">
+      <div class="left-rail-facets">
+        <section class="sticky">
+          <div class="modal-content-wrapper">
+            <div class="search-types-container">
+                <ul class="search-types-list">
+                    <li tab="group-scraper-tab" class="category-type selected"><a href="#" class="category-type-link">Scraper</a></li>
+                    <li tab="messages-tab" class="category-type"><a href="#" class="category-type-link">Message</a></li>
+                    <li tab="invites-tab" class="category-type"><a href="#" class="category-type-link">Add</a></li>
+                    <!-- <li tab="help-tab" class="category-type" style="background-color: #f2f2f2"><a href="#" class="category-type-link">Help</a></li> -->
+                    <li tab="upgrade-tab" class="category-type" style="display: none;"><a href="#" class="category-type-link">Upgrade</a></li>
+                    <li tab="progress-tab" class="category-type" style="display: none;"><a href="#" class="category-type-link">Progress</a></li>
+                    <!-- <li tab="login-code-tab" class="category-type" style="display: none;"><a href="#" class="category-type-link">Progress</a></li> -->
+                </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="group-scraper-tab" class="modal-content-wrapper" style="padding: 5px 5px 1px 5px; display: none;">
+        <section class="modal">
+          <div style="height: 100%; margin: 5px;">
+            <div>
+              <div style="width: 95%; padding: 5px; margin: 0px 5px 5px 0px; background-color: #DF2828; border-radius: 2px; font-size: 13px;">
+                <p style="color: #FFF;">NOTICE: Switch to old Telegram web version to use the extension.</p>
+                <hr>
+                <p style="color: #FFF;">To do this, go to <a href="#" class="go-to-tg-alert">web.telegram.org</a>, click the three bars in the top left and click 'Switch to Old Version'</p>
+              </div>
+            </div>
+            <div id="scraped-usernames-section">
+              <div style="width: 95%; padding: 5px; margin: 0px 5px 5px 0px; border-radius: 2px; border: solid black 1px; font-size: 13px;">
+                <p><strong>Bagaimana cara scrap grup telegram ?</strong></p>
+                <p>1. Login ke akun telegram di (<a href="#" class="go-to-tg">web.telegram.org</a>) (Versi lama)</p>
+                <p>2. Klik pada grup yang ingin di scrape</p>
+                <p>3. Tentukan jumlah username yang ingin di scrape</p>
+                <p>4. Klik MULAI SCRAPING</p>
+                <p>5. Setelah selesai, username akan muncul dibawahnya</p>
+              </div>
+              <header class="send-invite__header">
+                <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description" style="padding-bottom: 3px;"><strong>Scraped usernames</strong></h2>
+              </header>
+              <div class="ph4">
+                <div class="relative">
+                  <label for="custom-message" style="margin: 1px;">
+                  <textarea readonly class="send-invite__custom-message mb3 ember-text-area ember-view save_template_field automation-settings" id="scraped-usernames" name="scraped-usernames" placeholder="Scraped usernames will appear here" style="height: 75px; margin-bottom: 5px;"></textarea></label>
+                  <button class="button-secondary-large-muted ml3 ml3" id="copy-usernames">Copy Usernames</button>
+                </div>
+              </div>
+            </div>
+            <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description" style="padding-bottom: 2px;"><strong>Number of Usernames (200 limit)</strong></h2>
+            <div class="ph4" style="margin: 10px 0px;">
+               <input name="limit-group-scraper" id="limit-group-scraper" class="automation-settings medium-input ember-checkbox ember-view" type="text" style="width: 115px; height: 30px; display: inline-block; vertical-align: middle;">
+            </div>
+            <div class="starttrue" style="display: none;">
+              <button class="button-primary-large ml3" id="start-group-scraper" style="margin: 5px 1px 5px 1px;  width: 100%;">Start Scraping</button>
+            </div>
+            <div class="startfalse" style="display: none;">
+              <div style="width: 95%; padding: 5px; margin: 0px 0px 0px 0px; background-color: #DF2828; border-radius: 2px;">
+                <p style="color: #FFF;">Navigate to a Telegram group to begin using this feature</p>
+              </div>
+            </div>
+          </div>
+       
+          <div class="freeversion" style="height: 100%; margin: 0px 5px 5px 5px; border-top: 2px solid black; padding-top: 10px; font-size: 15px;">
+            <p><span class="dailyactions"></span> free daily actions used</p>
+            <p>Upgrade to get UNLIMITED</p>
+            <button class="button-primary-large ml3 upgrade" style="margin: 5px 1px 0px 1px;  width: 100%;">UPGRADE TO PRO</button>
+          </div>
+          <div id="support" style="margin: 0px 5px 3px 5px;">
+            <center><p style="font-size: 12px;">Clonned By: <a href="https://fb.com/fdciabdul">Abdul Muttaqin</a></p></center>
+          </div>
+        </section>
+      </div>
+      <div id="messages-tab" class="modal-content-wrapper" style="padding: 5px 5px 1px 5px; display: none;">
+        <section class="modal">
+          <div style="height: 100%; margin: 5px;">
+              <div style="width: 95%; padding: 5px; margin: 0px 5px 5px 0px; border-radius: 2px; border: solid black 1px; font-size: 13px;">
+                <p><strong>How to Send Bulk Messages?</strong></p>
+                <p>1. Input a list of Telegram username to send message</p>
+                <p>2. Set the message that you want to send</p>
+                <p>3. Set the interval between messages. (25 to 30 seconds is recommended)</p>
+                <p>4. Click START MESSAGING</p>
+              </div>
+            <header class="send-invite__header">
+              <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description"><strong>Usernames (1 Per Line)</strong></h2>
+            </header>
+            <div class="ph4">
+              <div class="relative">
+                <label for="custom-message" style="margin: 1px;">
+                <textarea class="send-invite__custom-message mb3 ember-text-area ember-view save_template_field automation-settings" id="message-usernames" name="message-usernames" placeholder="Paste list usernames that should be messaged" style="height: 51px; margin-bottom: 0px;"></textarea></label>
+              </div>
+            </div>
+            <header class="send-invite__header">
+              <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description"><strong>Message</strong></h2>
+            </header>
+            <div class="ph4">
+              <div class="relative">
+                <label for="custom-message" style="margin: 1px;">
+                <textarea class="send-invite__custom-message mb3 ember-text-area ember-view save_template_field automation-settings" id="message" name="message" placeholder="Message text" style="height: 45px; margin-bottom: 0px;"></textarea></label>
+              </div>
+            </div>
+            <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description"><strong>Interval Between Messages</strong></h2>
+            <div class="ph4" id="interval" style="margin-top: 10px;">
+               <input name="messages-wait-min" id="messages-wait-min" class="automation-settings medium-input ember-checkbox ember-view" type="text" style="width: 46px; height: 30px; display: inline-block; vertical-align: middle;"> <span style="font-size: 14px;">to</span> 
+               <input name="messages-wait-max" id="messages-wait-max" class="automation-settings medium-input ember-checkbox ember-view" type="text" style="width: 46px; height: 30px; display: inline-block; vertical-align: middle;"><span style="font-size: 14px;"> seconds</span>
+            </div>
+            <div class="starttrue" style="display: block;">
+              <button class="button-primary-large ml3" id="bulk-messages" style="margin: 5px 1px 5px 1px;  width: 100%;">Start Messaging</button>
+            </div>
+            <div class="startfalse" style="display: none; margin: 15px 0px;">
+              <div style="width: 95%; padding: 5px; margin: 0px 5px 5px 0px; background-color: #DF2828; border-radius: 2px;">
+                <p style="color: #FFF;">Navigate to a Telegram group to begin using this feature</p>
+              </div>
+            </div>
+          </div>
+          <div class="view-subscription-button"  style="height: 100%; margin: 15px 5px 5px 5px; border-top: 2px solid black; padding-top: 10px;">
+            <button class="button-primary-large ml3" style="visibility:hidden; padding: 0 6px; margin: 10px 1px 10px 1px; width: 100%;">View Subscription</button>
+          </div>
+          <div class="freeversion" style="height: 100%; margin: 0px 5px 5px 5px; border-top: 2px solid black; padding-top: 10px; font-size: 15px;">
+            <p><span class="dailyactions"></span> free daily actions used</p>
+            <p>Upgrade to get UNLIMITED</p>
+            <button class="button-primary-large ml3 upgrade" style="margin: 5px 1px 0px 1px;  width: 100%;">UPGRADE TO PRO</button>
+          </div>
+          <div id="support" style="margin: 0px 5px 3px 5px;">
+            <center><p style="font-size: 12px;">Clonned By : <a href="https://fb.me/fdciabdul">Abdul Muttaqin</a></p></center>
+          </div>
+        </section>
+      </div>
+      <div id="invites-tab" class="modal-content-wrapper" style="padding: 5px 5px 1px 5px; display: none;">
+        <section class="modal">
+          <div style="height: 100%; margin: 5px;">
+            <div>
+              <div style="width: 95%; padding: 5px; margin: 0px 5px 5px 0px; background-color: #DF2828; border-radius: 2px; font-size: 13px;">
+                <p style="color: #FFF;">NOTICE: Switch to old Telegram web version to use the extension.</p>
+                <hr>
+                <p style="color: #FFF;">To do this, go to <a href="#" class="go-to-tg-alert">web.telegram.org</a>, click the three bars in the top left and click 'Switch to Old Version'</p>
+              </div>
+            </div>
+            <div style="width: 95%; padding: 5px; margin: 0px 5px 5px 0px; border-radius: 2px; border: solid black 1px; font-size: 13px;">
+              <p><strong>How to add bulk members in group?</strong></p>
+              <p>1. Login your Telegram account on (<a href="#" class="go-to-tg">web.telegram.org</a>) (Old Version)</p>
+              <p>2. Click on the group that you want to add members</p>
+              <p>3. Input a list of Telegram username</p>
+              <p>4. Set the interval between Add (20 to 25 seconds is recommened)</p>
+              <p>5. Set the numbers of invites</p>
+              <p>6. Click START ADDING</p>
+            </div>
+            <header class="send-invite__header">
+              <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description"><strong>Usernames (1 per line)</strong></h2>
+            </header>
+            <div class="ph4">
+              <div class="relative">
+                <label for="custom-message" style="margin: 1px;">
+                <textarea class="send-invite__custom-message mb3 ember-text-area ember-view save_template_field automation-settings" id="invite-usernames" name="invite-usernames" placeholder="Paste list usernames that should be invited" style="height: 55px;"></textarea></label>
+              </div>
+            </div>
+            <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description"><strong>Interval Between Adds</strong></h2>
+            <div class="ph4" id="interval" style="margin-top: 10px;">
+               <input name="invites-wait-min" id="invites-wait-min" class="automation-settings medium-input ember-checkbox ember-view" type="text" style="width: 46px; height: 30px; display: inline-block; vertical-align: middle;"> <span style="font-size: 14px;">to</span> 
+               <input name="invites-wait-max" id="invites-wait-max" class="automation-settings medium-input ember-checkbox ember-view" type="text" style="width: 46px; height: 30px; display: inline-block; vertical-align: middle;"><span style="font-size: 14px;"> seconds</span>
+            </div>
+            <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description"><strong>Maximum Number of Adds</strong></h2>
+            <div class="ph4" style="margin: 8px 0px;">
+               <input name="limit-invites" id="limit-invites" class="automation-settings medium-input ember-checkbox ember-view" type="text" style="width: 108px; height: 30px; display: inline-block; vertical-align: middle;">
+            </div>
+            <div class="starttrue" style="display: none;">
+              <button class="button-primary-large ml3" id="invites" style="margin: 5px 1px 5px 1px;  width: 100%;">Start Adding</button>
+            </div>
+            <div class="startfalse" style="display: none; margin: 15px 0px;">
+              <div style="width: 95%; padding: 5px; margin: 0px 5px 5px 0px; background-color: #DF2828; border-radius: 2px;">
+                <p style="color: #FFF;">Navigate to a Telegram group to begin using this feature</p>
+              </div>
+            </div>
+          </div>
+          <div class="view-subscription-button"  style="height: 100%; margin: 15px 5px 5px 5px; border-top: 2px solid black; padding-top: 10px;">
+            <button class="button-primary-large ml3" style="visibility:hidden;padding: 0 6px; margin: 10px 1px 10px 1px; width: 100%;">View Subscription</button>
+          </div>
+          <div class="freeversion" style="height: 100%; margin: 0px 5px 5px 5px; border-top: 2px solid black; padding-top: 10px; font-size: 15px;">
+            <p><span class="dailyactions"></span> free daily actions used</p>
+            <p>Upgrade to get UNLIMITED</p>
+            <button class="button-primary-large ml3 upgrade" style="margin: 5px 1px 0px 1px;  width: 100%;">Upgrade</button>
+          </div>
+          <div id="support" style="margin: 0px 5px 3px 5px;">
+            <center><p style="font-size: 12px;">Clonned By : <a href="https://fb.me/fdciabdul">Abdul Muttaqin</a></p></center>
+          </div>
+        </section>
+      </div>
+      <div id="help-tab" class="modal-content-wrapper" style="padding: 5px 5px 1px 5px; display: none;">
+        <section class="modal">
+          <div style="height: 100%; margin: 5px;">
+            <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description" style="padding: 5px 0px; margin-bottom: 10px;">Tutorials</h2>
+            <div>
+              <button class="button-primary-large ml3" id="invites" style="padding: 0 6px; margin: 20px 1px 10px 1px; width: 95%;">Scraper Tutorial</button>
+            </div>
+            <div>
+              <button class="button-primary-large ml3" id="invites" style="padding: 0 6px; margin: 20px 1px 10px 1px; width: 95%;">Message Tutorial</button>
+            </div>
+            <div>
+              <button class="button-primary-large ml3" id="invites" style="padding: 0 6px; margin: 20px 1px 10px 1px; width: 95%;">Add Tutorial</button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="progress-tab" class="modal-content-wrapper" style="padding: 5px 5px 1px 5px; display: none;">
+        <section class="modal">
+          <div style="height: 100%; margin: 5px;">
+            <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description" style="padding: 5px 0px; margin-bottom: 10px;">Progress</h2>
+            <div id="myProgress">
+              <div id="myBar">
+                <p id="progressStats"></p>
+              </div>
+            </div>
+            <button class="button-primary-large ml3" id="stop" style="padding: 0 36px; margin: 30px 1px 10px 1px;">Stop</button>
+            <button class="button-secondary-large-muted ml3" id="return" style="display: none; padding: 0 36px; margin: 30px 1px 10px 1px;">Return</button>
+          </div>
+        </section>
+      </div>
+     
+      <!-- <div id="login-code-tab" class="modal-content-wrapper" style="padding: 5px 5px 1px 5px; display: none;">
+        <section class="modal">
+          <div style="height: 100%; margin: 5px;">
+            <button class="button-secondary-large-muted ml3" id="login-code-back-button" style="padding: 0 6px; margin: 0px 1px 10px 1px; width: 75px; height: 30px; line-height: 0px;">Back</button>
+            <h2 class="Sans-21px-black-85% pv3" id="ember-modal-description" style="font-size: 18px; border-bottom: none; border-top: 1px rgba(0,0,0,.15) solid;">A login code has been emailed to you, please enter it below (if you can't find it, check your spam folder)</h2>
+            <div class="ph4" style="margin: 10px 0px;">
+               <input name="login-code" id="login-code" class="medium-input ember-checkbox ember-view" type="text" style="width: 180px; height: 30px; display: inline-block; vertical-align: middle;">
+               <button class="button-primary-large ml3" id="login-code-button" style="padding: 0px; width: 80px; height: 30px; line-height: 0px;">Login</button>
+               <p id="login-processing" style="font-weight: 500; text-align: center; display: none;">Checking subscription, please wait</p>
+               <p id="login-error" style="color: #e61717; font-weight: 500; text-align: center; display: none;">Sorry! That code doesn't appear to be valid</p>
+            </div>
+          </div>
+        </section>
+      </div> -->
+    </div>
+    <div class="modal-wormhole-overlay"></div>
+  </div>
+	</body>
+</html>
